@@ -2,11 +2,12 @@
 using namespace std;
 int max(int x, int y, int z)
 {
-    if(x>y && x>z)
-        return x;
-    else if(y>z)
-        return y;
-    else return z;
+    // if(x>y && x>z)
+    //     return x;
+    // else if(y>z)
+    //     return y;
+    // else return z;
+    return x>y&&x>z?x:y>z?y:z;
 }
 int main()
 {
