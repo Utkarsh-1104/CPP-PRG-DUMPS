@@ -6,6 +6,7 @@ class student
     string name;
     public:
         void setrollnum(int r);
+        void setname(string n);
         void setmarks(int ma1, int ma2, int ma3);
         int totalmarks();
         char grade();
@@ -13,6 +14,10 @@ class student
 void student :: setrollnum(int r)
 {
     rollnum=r;
+}
+void student :: setname(string n)
+{
+    name=n;
 }
 void student :: setmarks(int ma1, int ma2, int ma3)
 {
@@ -31,9 +36,13 @@ int main()
 {
     student stu;
     int rn,mar1,mar2,mar3;
+    string namest;
     cout<<("Enter the rollnumber of the student : ");
     cin>>rn;
     stu.setrollnum(rn);
+    cout<<("Enter the name of the student : ");
+    cin>>namest;
+    stu.setname(namest);
     cout<<("Enter the marks of three subjects : ");
     cin>>mar1>>mar2>>mar3;
     stu.setmarks(mar1, mar2, mar3);
