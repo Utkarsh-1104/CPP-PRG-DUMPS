@@ -16,7 +16,7 @@ int main()
     cout<<("Enter two numbers : ");
     cin>>a>>b;
     float (c) = sum(a,b);
-    cout<<c<<endl;
+    cout<<endl<<c<<endl;
     float d = sum(b,a);
-    cout<<d;
+    cout<<endl<<d;
 }
