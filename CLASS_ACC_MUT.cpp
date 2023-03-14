@@ -8,7 +8,7 @@ class rec
         void setl(int l)
         {
             if(l>0)
-             len = l;
+                len = l;
             else
             {
                 cout<<("Invalid input.....");
@@ -25,13 +25,13 @@ class rec
                 bred=0;
             }
         }
-        void getl()
+        int getl()
         {
-            cout<<len;
+            return len;
         }
-        void getb()
+        int getb()
         {
-            cout<<bred;
+            return bred;
         }
         int area()
         {
@@ -51,10 +51,8 @@ int main()
     cout<<("Enter the breadth of the rectangle : ");
     cin>>b;
     r.setl(l); r.setb(b);
-    cout<<("\nLength is : ");
-    r.getl();
-    cout<<("\nBreadth is : ");
-    r.getb();
+    cout<<("\nLength is : ")<<r.getl();
+    cout<<("\nBreadth is : ")<<r.getb();
     cout<<("\nThe area of the rectangle is : ")<<r.area();
     cout<<("\nThe perimeter of the rectangle is : ")<<r.perimeter();
 }
