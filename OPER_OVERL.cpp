@@ -52,17 +52,3 @@ void complex :: ans(complex ans)
 {
     cout<<("Sum of complex numbers is : ")<<ans.getreal()<<" + "<<ans.getimg()<<"i";
 }
-int main()
-{
-    complex c1,c2,c3;
-    int r1,im1,r2,im2;
-    cout<<("Enter a complex number separated by spaces : ");
-    cin>>r1>>im1;
-    c1.setreal(r1); c1.setimg(im1);
-    cout<<("Enter another complex number separated by spaces : ");
-    cin>>r2>>im2;
-    c2.setreal(r2); c2.setimg(im2);
-    c3 = c2+c1;
-    c3.ans(c3);
-    return 0;
-}
