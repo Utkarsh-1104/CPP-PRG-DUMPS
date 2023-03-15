@@ -8,7 +8,7 @@ class complex
         void setimg (int img);
         int getreal ();
         int getimg ();
-        complex add(complex c);
+        complex operator+ (complex c);
 };
 void complex :: setreal(int real)
 {
@@ -26,7 +26,7 @@ int complex :: getimg()
 {
     return this->img;
 }
-complex complex :: add(complex c)
+complex complex :: operator+ (complex c)
 {
     complex temp;
     temp.real = real + c.real;
@@ -43,7 +43,7 @@ int main()
     cout<<("Enter another complex number separated by spaces : ");
     cin>>r2>>im2;
     c2.setreal(r2); c2.setimg(im2);
-    c3 = c2.add(c1);
+    c3 = c2+c1;
     cout<<("Sum of complex numbers is : ")<<c3.getreal()<<" + "<<c3.getimg()<<"i";
     return 0;
 }
