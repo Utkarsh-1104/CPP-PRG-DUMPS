@@ -5,22 +5,25 @@ struct demo
     private:
         int a,b;
     public:
-        void seta(int x)
-        {
-            a=x;
-        }
-        void setb(int y)
-        {
-            b=y;
-        }
-        void swap()
-        {
-            int t=a;
-            a=b;
-            b=t;
-            cout<<a<<" "<<b;
-        }
+        void seta(int x);
+        void setb(int y);
+        void swap();
 };
+void demo :: seta(int x)
+{
+    a=x;
+}
+void demo :: setb(int y)
+{
+    b=y;
+}
+void demo :: swap()
+{
+    int t=a;
+    a=b;
+    b=t;
+    cout<<a<<" "<<b;
+}
 int main()
 {
     demo d;
