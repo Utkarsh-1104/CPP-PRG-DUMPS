@@ -20,7 +20,7 @@ int main()
     cin>>p2>>q2;
     r2.setp(p2); r2.setq(q2);
     r3 = r1+r2;
-    cout<<r3;
+    cout<<("The sum of ")<<r1<<" and "<<r2<<" is : "<<r3;
 }
 void rational :: setp(int p)
 {
@@ -39,6 +39,6 @@ rational operator+(rational p1, rational p2)
 }
 ostream &operator<<(ostream &out, rational r)
 {
-    cout<<("The sum of the rational numbers is : ")<<r.p<<"/"<<r.q;
+    cout<<r.p<<"/"<<r.q;
     return out;
 }
