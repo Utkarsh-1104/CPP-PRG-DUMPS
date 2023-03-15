@@ -9,6 +9,7 @@ class complex
         int getreal ();
         int getimg ();
         complex operator+ (complex c);
+        void ans(complex ans);
 };
 void complex :: setreal(int real)
 {
@@ -33,6 +34,10 @@ complex complex :: operator+ (complex c)
     temp.img = img + c.img;
     return temp;
 }
+void complex :: ans(complex ans)
+{
+    cout<<("Sum of complex numbers is : ")<<ans.getreal()<<" + "<<ans.getimg()<<"i";
+}
 int main()
 {
     complex c1,c2,c3;
@@ -44,6 +49,6 @@ int main()
     cin>>r2>>im2;
     c2.setreal(r2); c2.setimg(im2);
     c3 = c2+c1;
-    cout<<("Sum of complex numbers is : ")<<c3.getreal()<<" + "<<c3.getimg()<<"i";
+    c3.ans(c3);
     return 0;
 }
