@@ -4,30 +4,27 @@ class complex
 {
     int r,i;
     public:
-        complex(int r=0, int i=0)
+      /* complex(int p=0, int q=0)
         {                                                                  //yet to commit
-        this ->r=r;
-        this ->i=i;
-        }
-        //friend istream &operator>>(istream &in, complex c);
-        friend ostream &operator<<(ostream &out, complex c);
+        r=p;
+        i=q;
+        }*/
+        friend void operator>>(istream &, complex &);
+        friend void operator<<(ostream &, complex);
 };
-// istream &operator>>(istream &in, complex c)
-// {
-//     cout<<("Enter a complex number separated by spaces : ");
-//     in>>c.r>>c.i;
-//     return in;
-// }
-ostream &operator<<(ostream &out, complex c)
+void operator>>(istream &in, complex &c)
+{
+    cout<<("Enter a complex number separated by spaces : ");
+    in>>c.r>>c.i;
+}
+void operator<<(ostream &out, complex c)
 {
     out<<c.r<<" + "<<c.i<<"i";
-    return out;
 }
 int main()
 {
     
-    complex c(3,6);
-    //cin>>c;
+    complex c;
+    cin>>c;
     cout<<c;
-    //operator<<(cout,c);
-}
+   }
