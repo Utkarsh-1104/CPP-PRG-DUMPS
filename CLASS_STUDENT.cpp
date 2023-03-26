@@ -1,52 +1,106 @@
 #include<iostream>
+#include<string>
 using namespace std;
+//grandfather class student
 class student
 {
-    int rollnum,m1,m2,m3;
+private:
+    int rn;
     string name;
-    public:
-        void setrollnum(int r);
-        void setname(string n);
-        void setmarks(int ma1, int ma2, int ma3);
-        int totalmarks();
-        char grade();
+public:
+    void getdata();
+    void putdata();
 };
-void student :: setrollnum(int r)
+void student::getdata()
 {
-    rollnum=r;
+    cout<<"Enter Roll Nunber: ";
+    cin>>rn;
+    fflush(stdin);
+    cout<<"Enter Name: ";
+    getline(cin, name);
 }
-void student :: setname(string n)
+void student::putdata()
 {
-    name=n;
+    cout<<"\n\n***** Details of the Student *****\n\n";
+    cout<<"Roll Number : "<<rn;
+    cout<<"\nName : "<<name;
 }
-void student :: setmarks(int ma1, int ma2, int ma3)
+//father class marks inherited from student
+class marks : virtual public student
 {
-    m1=ma1; m2=ma2; m3=ma3;
-}
-int student :: totalmarks()
+    protected:
+        int m1, m2, m3;
+    public:
+        void getmarks();
+        void putmarks();
+};
+void marks::getmarks()
 {
-    return m1+m2+m3;
+    getdata();
+    cout<<"Enter Three Marks : ";
+    cin>>m1>>m2>>m3;
 }
-char student :: grade()
+void marks::putmarks()
 {
-    float per = (m1+m2+m3)/3;
-    return per>80?'A':80>per>60?'B':60>per>40?'C':'D';
+    putdata();
+    cout<<"\nMarks : "<<m1<<"\t"<<m2<<"\t"<<m3;
 }
+//mother class activity inherited from student
+class activity : public virtual student
+{
+    protected:
+        int sp, gd;
+    public:
+        void getact();
+        void putact();
+};
+void activity::getact()
+{
+    cout<<"Enter Two activity Marks : ";
+    cin>>sp>>gd;
+}
+void activity::putact()
+{
+    cout<<"\nActivity Marks : "<<sp<<"\t"<<gd;
+}
+//child class result inherited from both marks and activity
+class result : public marks, public activity
+{
+    int totalm, totalact;
+    float perm, peract;
+    char gram, gract;
+    public:
+        void getd();
+        void process();
+        void display();
+};
+void result::getd()
+{
+    getmarks();
+    getact();
+}
+void result::process()
+{
+    totalm=m1+m2+m3;
+    totalact=sp+gd;
+    perm=totalm/float(3);
+    peract=totalact/2.0;
+}
+void result::display()
+{
+    putmarks();
+    putact();
+    cout<<"\nTotal Marks: "<<totalm;
+    cout<<"\nTotal Activity Marks: "<<totalact;
+    cout<<"\nPercentage of Marks: "<<perm;
+    cout<<"\nPercentage of Activity Marks: "<<peract;
+}
+//main
 int main()
 {
-    student stu;
-    int rn,mar1,mar2,mar3;
-    string namest;
-    cout<<("Enter the rollnumber of the student : ");
-    cin>>rn;
-    stu.setrollnum(rn);
-    cout<<("Enter the name of the student : ");
-    cin>>namest;
-    stu.setname(namest);
-    cout<<("Enter the marks of three subjects : ");
-    cin>>mar1>>mar2>>mar3;
-    stu.setmarks(mar1, mar2, mar3);
-    cout<<("Total marks of the student is  : ")<<stu.totalmarks();
-    cout<<("\nGrade if the student is : ")<<stu.grade();
+    result r;
+    r.getd();
+    r.process();
+    r.display();
     return 0;
 }
