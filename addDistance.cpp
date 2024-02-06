@@ -5,10 +5,17 @@ class distanceFeetandInches {
     private:
         int feet, inch;
     public:
+        distanceFeetandInches(){};
+        distanceFeetandInches(int, int);
         void getdata();
         void putdata();
         void add(distanceFeetandInches, distanceFeetandInches);
 };
+
+distanceFeetandInches :: distanceFeetandInches(int f, int i) {
+    feet = f;
+    inch = i;
+}
 
 void distanceFeetandInches :: getdata() {
     cout<<"Enter feet and inches respectively : ";
@@ -26,10 +33,13 @@ void distanceFeetandInches :: add(distanceFeetandInches x, distanceFeetandInches
 }
 
 int main() {
-    distanceFeetandInches d1, d2, d3;
-    d1.getdata();
-    d2.getdata();
-    d3.add(d1, d2);
+    // d1.getdata();
+    // d2.getdata();            giving input maunally using getdata()
+    // d3.add(d1, d2);
+    distanceFeetandInches d1(5, 6);
+    distanceFeetandInches d2(4, 8);        // giving input using constructor
+    distanceFeetandInches d3;
+    d3.add(d1, d2); 
     cout<<"Distance 1 : "; 
     d1.putdata();
     cout<<"\nDistance 2 : "; 
