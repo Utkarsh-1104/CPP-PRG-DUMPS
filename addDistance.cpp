@@ -9,7 +9,8 @@ class distanceFeetandInches {
         distanceFeetandInches(int, int);
         void getdata();
         void putdata();
-        void add(distanceFeetandInches, distanceFeetandInches);
+        //void add(distanceFeetandInches, distanceFeetandInches);
+        friend distanceFeetandInches add(distanceFeetandInches, distanceFeetandInches);         // friend function
 };
 
 distanceFeetandInches :: distanceFeetandInches(int f, int i) {
@@ -26,10 +27,18 @@ void distanceFeetandInches :: putdata() {
     cout<<feet<<" feet and "<<inch<<" inches";
 }
 
-void distanceFeetandInches :: add(distanceFeetandInches x, distanceFeetandInches y) {
-    inch = x.inch + y.inch;
-    feet = x.feet + y.feet + inch/12;
-    inch = inch%12;
+// void distanceFeetandInches :: add(distanceFeetandInches x, distanceFeetandInches y) {
+//     inch = x.inch + y.inch;
+//     feet = x.feet + y.feet + inch/12;
+//     inch = inch%12;
+// }
+
+distanceFeetandInches add(distanceFeetandInches x, distanceFeetandInches y) {
+    distanceFeetandInches temp;
+    temp.inch = x.inch + y.inch;
+    temp.feet = x.feet + y.feet + temp.inch/12;
+    temp.inch = temp.inch % 12;
+    return temp;
 }
 
 int main() {
@@ -39,7 +48,8 @@ int main() {
     distanceFeetandInches d1(5, 6);
     distanceFeetandInches d2(4, 8);        // giving input using constructor
     distanceFeetandInches d3;
-    d3.add(d1, d2); 
+    //d3.add(d1, d2); 
+    d3 = add(d1, d2);                       // calling friend function
     cout<<"Distance 1 : "; 
     d1.putdata();
     cout<<"\nDistance 2 : "; 
