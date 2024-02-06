@@ -27,6 +27,7 @@ void distanceFeetandInches :: putdata() {
     cout<<feet<<" feet and "<<inch<<" inches";
 }
 
+//method to add two distances
 // void distanceFeetandInches :: add(distanceFeetandInches x, distanceFeetandInches y) {
 //     inch = x.inch + y.inch;
 //     feet = x.feet + y.feet + inch/12;
