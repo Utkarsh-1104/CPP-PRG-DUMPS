@@ -2,7 +2,8 @@
 using namespace std;
 int main()
 {
-    int i,avg=0;
+    int i;
+    float avg=0;
     cout<<("Enter the number of the elements of the array : ");
     cin>>i;
     int A[i];
