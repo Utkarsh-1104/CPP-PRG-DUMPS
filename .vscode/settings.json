@@ -3,6 +3,7 @@
         "*.ejs": "html",
         ".env*": "dotenv",
         "iostream": "cpp",
-        "xutility": "cpp"
+        "xutility": "cpp",
+        "ostream": "cpp"
     }
 }
