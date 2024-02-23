@@ -158,6 +158,70 @@ void multisets() {
     cout<<endl;
 }
 
+//map
+void maps() {
+    map<int, int> m;
+    m[1] = 2;
+    m[2] = 3;
+    m[3] = 4;
+    m[4] = 5;
+    for(auto i: m) {
+        cout<<i.first<<" "<<i.second<<endl;
+    }
+    cout<<m.size()<<endl;
+    cout<<m.empty()<<endl;
+    cout<<m.count(2)<<endl;
+    m.erase(3);
+    for(auto i: m) {
+        cout<<i.first<<" "<<i.second<<endl;
+    }
+
+    map<pair<int, int>, int> mp;
+    mp[{1, 2}] = 3;
+    mp[{2, 3}] = 4;
+    mp[{3, 4}] = 5;
+    for(auto i: mp) {
+        cout<<i.first.first<<" "<<i.first.second<<" "<<i.second<<endl;
+    }
+    cout<<mp.size()<<endl;
+    cout<<mp.empty()<<endl;
+    cout<<mp.count({2, 3})<<endl;
+    mp.erase({3, 4});
+    for(auto i: mp) {
+        cout<<i.first.first<<" "<<i.first.second<<" "<<i.second<<endl;
+    }
+}
+
+//comparator function
+bool comp(pair<int, int> p1, pair<int, int> p2) {
+    if (p1.first < p2.first) return true;
+    if (p1.first > p2.first) return false;
+    if (p1.second > p2.second) return true;
+    return false;
+}
+
+//sort
+void sort() {
+    int arr[] = {11, 23, 3, 34, 15};
+    sort(arr, arr+5);
+    for(int i=0; i<5; i++) {
+        cout<<arr[i]<<" ";
+    }
+    cout<<endl;
+
+    sort(arr, arr+5, greater<int>());
+    for(int i=0; i<5; i++) {
+        cout<<arr[i]<<" ";
+    }
+    cout<<endl;
+
+    pair<int, int> p[] = {{1, 12}, {13, 4}, {13, 16}, {7, 8}};
+    sort(p, p+4, comp);
+    for(int i=0; i<4; i++) {
+        cout<<p[i].first<<" "<<p[i].second<<endl;
+    }
+}
+
 int main() {
     // pairs();
     // vectors();
@@ -166,7 +230,9 @@ int main() {
     // stacks();
     // queues();
     // priorityQueues();
-    //sets();
-    multisets();
+    // sets();
+    // multisets();
+    // maps();
+    sort();
     return 0;
 }
