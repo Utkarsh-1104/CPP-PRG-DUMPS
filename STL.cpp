@@ -20,7 +20,36 @@ void pairs() {
     cout<<arr[0].first<<" "<<arr[1].second<<endl;
 }
 
+//vectors
+void vectors() {
+    vector<int> v;
+    v.push_back(1);
+    v.emplace_back(2);
+    cout<<v[0]<<" "<<v[1]<<endl;
+
+    vector<pair <int, int>> vp;
+    vp.push_back({1, 2});
+    vp.emplace_back(3, 4);
+    cout<<vp[0].first<<" "<<vp[0].second<<endl;
+    cout<<vp[1].first<<" "<<vp[1].second<<endl;
+}
+
+//list
+void lists() {
+    list<int> l;
+    l.push_back(1);
+    l.emplace_back(2);
+    cout<<l.front()<<" "<<l.back()<<endl;
+
+    l.push_front(3);
+    cout<<l.front()<<" "<<l.back()<<endl;
+    l.emplace_front(4);
+    cout<<l.front()<<" "<<l.back()<<endl;
+}
+
 int main() {
-    pairs();
+    // pairs();
+    // vectors();
+    lists();
     return 0;
 }
