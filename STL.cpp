@@ -114,14 +114,59 @@ void priorityQueues() {
     cout<<pqm.size()<<endl;
     cout<<pqm.empty()<<endl;
 }
+//sets
+void sets() {
+    set<int> s;
+    s.insert(1);
+    s.insert(2);
+    s.insert(2);
+    s.insert(3);
+    s.insert(4);
+    for(auto i: s) {
+        cout<<i<<" ";
+    }
+    cout<<endl;
+    cout<<s.size()<<endl;
+    cout<<s.empty()<<endl;
+    cout<<s.count(2)<<endl;
+    s.erase(3);
+    for(auto i: s) {
+        cout<<i<<" ";
+    }  
+    cout<<endl;
+}
+
+//multisets
+void multisets() {
+    multiset<int> s;
+    s.insert(1);
+    s.insert(2);
+    s.insert(2);
+    s.insert(3);
+    s.insert(4);
+    for(auto i: s) {
+        cout<<i<<" ";
+    }
+    cout<<endl;
+    cout<<s.size()<<endl;
+    cout<<s.empty()<<endl;
+    cout<<s.count(2)<<endl;
+    s.erase(s.find(2));
+    for(auto i: s) {
+        cout<<i<<" ";
+    }  
+    cout<<endl;
+}
 
 int main() {
-    pairs();
-    vectors();
-    lists();
-    deques();
-    stacks();
-    queues();
-    priorityQueues();
+    // pairs();
+    // vectors();
+    // lists();
+    // deques();
+    // stacks();
+    // queues();
+    // priorityQueues();
+    //sets();
+    multisets();
     return 0;
 }
