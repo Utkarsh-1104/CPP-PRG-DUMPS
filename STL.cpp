@@ -74,11 +74,54 @@ void stacks() {
     cout<<s.empty()<<endl;
 }
 
+//queue
+void queues() {
+    queue<int> q;
+    q.push(1);
+    q.push(2);
+    q.push(3);
+    q.emplace(4);
+    cout<<q.front()<<endl;
+    cout<<q.back()<<endl;
+    q.pop();
+    cout<<q.front()<<endl;
+    cout<<q.back()<<endl;
+    cout<<q.size()<<endl;
+    cout<<q.empty()<<endl;
+}
+
+//priority queue
+void priorityQueues() {
+    priority_queue<int> pq;
+    pq.push(1);
+    pq.push(12);
+    pq.push(3);
+    pq.push(4);
+    cout<<pq.top()<<endl;
+    pq.pop();
+    cout<<pq.top()<<endl;
+    cout<<pq.size()<<endl;
+    cout<<pq.empty()<<endl;
+
+    priority_queue<int, vector<int>, greater<int>> pqm;
+    pqm.push(1);
+    pqm.push(5);
+    pqm.push(3);
+    pqm.push(15);
+    cout<<pqm.top()<<endl;
+    pqm.pop();
+    cout<<pqm.top()<<endl;
+    cout<<pqm.size()<<endl;
+    cout<<pqm.empty()<<endl;
+}
+
 int main() {
     pairs();
     vectors();
     lists();
     deques();
     stacks();
+    queues();
+    priorityQueues();
     return 0;
 }
