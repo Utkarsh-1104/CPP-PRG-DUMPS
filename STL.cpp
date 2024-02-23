@@ -47,9 +47,38 @@ void lists() {
     cout<<l.front()<<" "<<l.back()<<endl;
 }
 
+//deque
+void deques() {
+    deque<int> d;
+    d.push_back(1);
+    d.emplace_back(2);
+    cout<<d.front()<<" "<<d.back()<<endl;
+
+    d.push_front(3);
+    cout<<d.front()<<" "<<d.back()<<endl;
+    d.emplace_front(4);
+    cout<<d.front()<<" "<<d.back()<<endl;
+}
+
+//stack
+void stacks() {
+    stack<int> s;
+    s.push(1);
+    s.push(2);
+    s.push(3);
+    s.emplace(4);
+    cout<<s.top()<<endl;
+    s.pop();
+    cout<<s.top()<<endl;
+    cout<<s.size()<<endl;
+    cout<<s.empty()<<endl;
+}
+
 int main() {
-    // pairs();
-    // vectors();
+    pairs();
+    vectors();
     lists();
+    deques();
+    stacks();
     return 0;
 }
