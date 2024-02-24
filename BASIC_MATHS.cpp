@@ -1,4 +1,4 @@
-#include<iostream>
+#include<bits/stdc++.h>
 using namespace std;
 
 //count digits
@@ -40,7 +40,25 @@ int GCD(int n, int m) {
     return GCD(m, n % m);
 }
 
+//armstrong
+bool checkArmstrong(){
+    int n;
+    cin>>n;
+	int dup = n;
+	int sum = 0;
+	int power = int(log10(n) + 1);
+	while(n != 0) {
+		sum = pow(n % 10, power) + sum;
+		n/=10;
+	}
+	if (sum == dup)
+		return true;
+	else
+		return false;
+}
+
 int main() {
-    cout<<countDigits()<<endl;
-    cout<<GCD(3, 2);
+    // cout<<countDigits()<<endl;
+    // cout<<GCD(3, 2);
+    cout<<checkArmstrong();
 }
