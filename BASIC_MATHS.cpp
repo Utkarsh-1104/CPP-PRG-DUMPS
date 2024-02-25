@@ -82,10 +82,28 @@ int reverse(int x) {
     return int(num);
 }
 
+//palindrome
+bool isPalindrome(int x) {
+    if (x < 0) {
+        return false;
+    }
+
+    long int reversed = 0;
+    long int temp = x;
+
+    while (temp != 0) {
+        reversed = reversed * 10 + temp % 10;
+        temp /= 10;
+    }
+
+    return (reversed == x);
+}
+
 int main() {
     cout<<countDigits()<<endl;
     cout<<GCD(3, 2);
     cout<<checkArmstrong();
     cout<<isPrime(8);
     cout<<reverse(123);
+    cout<<isPalindrome(1121);
 }
